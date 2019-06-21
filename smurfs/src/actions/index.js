@@ -28,3 +28,10 @@ export const fetchSmurfs = () => dispatch => {
     .catch(err => dispatch({ type: ERROR, payload: 'Error getting Smurfs' }));
 };
 
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: ADD_SMURF });
+  axios
+    .post('http://localhost:3333/smurfs', smurf)
+    .then(res => dispatch({ type: SUCCESS, payload: res.data }))
+    .catch(err => dispatch({ type: ERROR, payload: 'Error Adding Smurf' }));
+};
