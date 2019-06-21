@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchSmurfs } from '../actions';
+import { FaTrash } from 'react-icons/fa';
+import { fetchSmurfs, deleteSmurf } from '../actions';
 
 class Smurfs extends Component {
   componentDidMount() {
@@ -17,6 +18,9 @@ class Smurfs extends Component {
                 <h2>Name: {smurf.name} </h2>
                 <p>Name: {smurf.height} </p>
                 <p>Name: {smurf.age} </p>
+                <button onClick={() => this.props.deleteSmurf(smurf.id)}>
+                  <FaTrash />
+                </button>
               </div>
             </li>
           ))
@@ -30,5 +34,5 @@ class Smurfs extends Component {
 
 export default connect(
   state => state,
-  { fetchSmurfs },
+  { fetchSmurfs, deleteSmurf },
 )(Smurfs);
