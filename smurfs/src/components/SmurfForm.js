@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addSmurf } from '../actions';
+import { Form } from '../styles';
 
 const initialState = {
   name: '',
@@ -30,7 +31,7 @@ class SmurfForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmitHandler}>
+        <Form onSubmit={this.onSubmitHandler}>
           <input
             placeholder="Enter Name"
             value={this.state.name}
@@ -50,7 +51,7 @@ class SmurfForm extends Component {
             name="height"
           />
           <button>Add Smurf</button>
-        </form>
+        </Form>
       </div>
     );
   }
