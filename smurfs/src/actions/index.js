@@ -3,7 +3,11 @@ import axios from 'axios';
 // Action Types
 export const FETCH_SMURFS = 'FETCH_SMURFS';
 export const ADD_SMURF = 'ADD_SMURF';
+export const UPDATE_SMURF = 'UPDATE_SMURF';
 export const DELETE_SMURF = 'DELETE_SMURF';
+
+export const SUCCESS = 'SUCCESS';
+export const ERROR = 'ERROR';
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
